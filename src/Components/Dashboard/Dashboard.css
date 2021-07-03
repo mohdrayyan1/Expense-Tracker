@@ -1,0 +1,94 @@
+.dashboard > p,
+.recenttransaction > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+  font-family: "poppins", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.amount__card {
+  padding: 10px;
+  height: 150px;
+  width: 250px;
+  position: relative;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.amount__name {
+  position: absolute;
+  top: 70px;
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.amount__plus {
+  position: absolute;
+  margin-top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.amount__plus:hover {
+  cursor: pointer;
+  background-color: #c4c4c4;
+}
+
+.amount__plus > img {
+  width: 25px;
+  margin: 0 auto;
+}
+
+.amount__icon {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+}
+
+.amount__icon > img {
+  width: 40px;
+  margin: 0 auto;
+  
+}
+
+.amount__rupees {
+  position: absolute;
+  bottom: 20px;
+  font-family: "poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.recenttransaction span {
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.red,.Expense{
+  color: #ff0038;
+}
+
+.green,.Income{
+  color: #32cd32;
+}
+
+.blue{
+  color: #4169e1;
+}

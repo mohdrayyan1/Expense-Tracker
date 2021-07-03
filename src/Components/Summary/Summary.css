@@ -1,0 +1,13 @@
+.summary p{
+	position: relative;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+	font-family: 'poppins',sans-serif;
+	font-weight: 600;
+	font-size: 25px;
+}
+
+.chart {
+	height: 50vh;
+}
