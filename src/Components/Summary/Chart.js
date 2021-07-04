@@ -1,9 +1,11 @@
 import { ResponsivePie } from '@nivo/pie'
 import { useEffect, useState } from 'react'
+import gradient from './Gradient.json'
 import { db } from '../../firebase'
 
 const Chart = ({ id }) => {
 
+	const [salary, setSalary] = useState(0)
 	const [electricity, setElectricity] = useState(0)
 	const [entertainment, setEntertainment] = useState(0)
 	const [fees, setFees] = useState(0)
@@ -24,6 +26,7 @@ const Chart = ({ id }) => {
 				.doc(id)
 				.onSnapshot(doc => {
 					if (doc.data().category) {
+						setSalary(doc.data().category.salary)
 						setElectricity(doc.data().category.electricity)
 						setEntertainment(doc.data().category.entertainment)
 						setFees(doc.data().category.fees)
@@ -42,10 +45,17 @@ const Chart = ({ id }) => {
 		}
 	}, [id])
 
+
+
 	return (
 		<>
 			<ResponsivePie
 				data={[
+					{
+						"id": "Salary 🤑",
+						"label": "Salary 🤑",
+						"value": salary,
+					},
 					{
 						"id": "Electricity ⚡",
 						"label": "Electricity ⚡",
@@ -97,52 +107,38 @@ const Chart = ({ id }) => {
 						"value": transportation
 					}
 				]}
-				margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+				margin={{ top: 40, right: 80, bottom: 40, left: 80 }}
 				innerRadius={0.5}
 				padAngle={0.7}
 				cornerRadius={3}
 				activeOuterRadiusOffset={8}
-				borderWidth={1}
-				borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
 				arcLinkLabelsSkipAngle={10}
 				arcLinkLabelsTextColor="#333333"
 				arcLinkLabelsThickness={2}
 				arcLinkLabelsColor={{ from: 'color' }}
 				arcLabelsSkipAngle={10}
 				arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 4]] }}
-				defs={[
+				theme={
 					{
-						id: 'dots',
-						type: 'patternDots',
-						background: 'inherit',
-						color: 'rgba(255, 255, 255, 0.3)',
-						size: 4,
-						padding: 1,
-						stagger: true
-					},
-					{
-						id: 'lines',
-						type: 'patternLines',
-						background: 'inherit',
-						color: 'rgba(255, 255, 255, 0.3)',
-						rotation: -45,
-						lineWidth: 6,
-						spacing: 10
+						"background": "#ffffff",
+						"textColor": "#333333",
+						"fontSize": 15
 					}
-				]}
+				}
+				defs={gradient}
 				fill={[
-					{ match: { id: 'Electricity ⚡' }, id: 'dots' },
-					{ match: { id: 'Entertainment 🎮' }, id: 'dots' },
-					{ match: { id: 'Fees 🏫' }, id: 'dots' },
-					{ match: { id: 'Food 🍔' }, id: 'dots' },
-					{ match: { id: 'Gift 🎁' }, id: 'lines' },
-					{ match: { id: 'Hotel 🏨' }, id: 'lines' },
-					{ match: { id: 'Medical 🏥' }, id: 'lines' },
-					{ match: { id: 'Petrol ⛽' }, id: 'lines' },
-					{ match: { id: 'Shopping 👗' }, id: 'lines' },
-					{ match: { id: 'Transportation 🚇' }, id: 'lines' }
+					{ match: { id: 'Electricity ⚡' }, id: 'gradientA' },
+					{ match: { id: 'Entertainment 🎮' }, id: 'gradientB' },
+					{ match: { id: 'Fees 🏫' }, id: 'gradientC' },
+					{ match: { id: 'Food 🍔' }, id: 'gradientD' },
+					{ match: { id: 'Gift 🎁' }, id: 'gradientE' },
+					{ match: { id: 'Hotel 🏨' }, id: 'gradientF' },
+					{ match: { id: 'Medical 🏥' }, id: 'gradientG' },
+					{ match: { id: 'Petrol ⛽' }, id: 'gradientH' },
+					{ match: { id: 'Shopping 👗' }, id: 'gradientI' },
+					{ match: { id: 'Transportation 🚇' }, id: 'gradientJ' },
+					{ match: { id: 'Salary 🤑' }, id: 'gradientK' }
 				]}
-				legends={[]}
 			/>
 		</>
 	)

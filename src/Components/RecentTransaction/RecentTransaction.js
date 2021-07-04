@@ -85,13 +85,15 @@ const useStyles2 = makeStyles({
 		backgroundColor: "black",
 		"& .MuiTableRow-root .MuiTableCell-root": {
 			color: "white",
-			fontFamily: "Poppins"
+			fontFamily: "Poppins",
+			// borderBottom:"0px"
 		},
 	},
 	cell: {
 		padding: "1px 16px",
 		height: "50px",
-		fontSize: "1rem"
+		fontSize: "1rem",
+		borderBottom: "0px"
 	},
 });
 
@@ -100,7 +102,7 @@ const RecentTransaction = ({ id }) => {
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
 	const [rows, setRows] = useState([])
-	
+
 
 	useEffect(() => {
 		if (id) {
@@ -159,9 +161,9 @@ const RecentTransaction = ({ id }) => {
 										</TableCell>
 										<TableCell className={classes.cell} style={{ width: 70 }}>
 											{(row.name === "Income") ? (
-												<span className="green" style={{background:"#d4ffd9"}}>{row.name}</span>
+												<span className="green">{row.name}</span>
 											) : (
-												<span className="red" style={{background:"#ffbdbd"}}>{row.name}</span>
+												<span className="red">{row.name}</span>
 											)}
 										</TableCell>
 									</TableRow>

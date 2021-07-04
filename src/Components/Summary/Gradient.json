@@ -1,0 +1,91 @@
+[
+	{
+		"id": "gradientA",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#2BC0E4" },
+			{ "offset": 100, "color": "#EAECC6" }
+		]
+	},
+	{
+		"id": "gradientB",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#FF8008" },
+			{ "offset": 100, "color": "#FFC837" }
+		]
+	},
+	{
+		"id": "gradientC",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#1D976C" },
+			{ "offset": 100, "color": "#93F9B9" }
+		]
+	},
+	{
+		"id": "gradientD",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#FC5C7D" },
+			{ "offset": 100, "color": "#6A82FB" }
+		]
+	},
+	{
+		"id": "gradientE",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#22c1c3" },
+			{ "offset": 100, "color": "#6A82FB" }
+		]
+	},
+	{
+		"id": "gradientF",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#ff9966" },
+			{ "offset": 100, "color": "#ff5e62" }
+		]
+	},
+
+	{
+		"id": "gradientG",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#ee0979" },
+			{ "offset": 100, "color": "#ff6a00" }
+		]
+	},
+	{
+		"id": "gradientH",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#56ab2f" },
+			{ "offset": 100, "color": "#a8e063" }
+		]
+	},
+	{
+		"id": "gradientI",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#f46b45" },
+			{ "offset": 100, "color": "#eea849" }
+		]
+	},
+	{
+		"id": "gradientJ",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#ba5370" },
+			{ "offset": 100, "color": "#f4e2d8" }
+		]
+	},
+	{
+		"id": "gradientK",
+		"type": "linearGradient",
+		"colors": [
+			{ "offset": 0, "color": "#F413DD" },
+			{ "offset": 100, "color": "#FF3422" }
+		]
+	}
+]

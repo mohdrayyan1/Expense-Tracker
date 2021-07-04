@@ -5,6 +5,8 @@ import firebase from 'firebase'
 import { auth, db } from './firebase';
 import Error from './Components/Error';
 import Home from './Components/Home';
+import { keepTheme } from './themes';
+import Toggle from './Toggle';
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -14,20 +16,24 @@ const App = () => {
   const [id, setId] = useState()
   const [user, setUser] = useState(null)
 
+
+  useEffect(() => {
+    keepTheme();
+  })
+
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         setUser(authUser)
-      }
-      db.collection("users").where("email", "==", authUser.email)
-        .onSnapshot((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            setId(doc.id)
+        db.collection("users").where("email", "==", authUser.email)
+          .onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              setId(doc.id)
+            });
           });
-        });
+      }
     })
   }, [user])
-
 
   const signIn = () => {
     auth.signInWithPopup(provider)
@@ -78,27 +84,29 @@ const App = () => {
   return (
     <>
       <div className="app">
-        <AppBar color="transparent" position="static">
+        <AppBar position="static">
           <Toolbar>
             <div className="profile-container">
               {(user) ? (
                 <>
                   <Avatar alt={user.displayName} src={user.photoURL} />
                   <p className="displayName">{user.displayName}</p>
+                  {/* <Toggle /> */}
                   <Button variant="contained" color="secondary" onClick={signOut}>Sign Out</Button>
                 </>
               ) : (
                 <>
-                  <Button onClick={signIn}>Sign In</Button>
-                  <Button onClick={signIn}>Sign Up</Button>
+                  <Toggle />
+                  <Button variant="contained" color="primary" style={{marginRight:"20px"}} onClick={signIn}>Sign In</Button>
+                  <Button variant="contained" color="primary" onClick={signIn}>Sign Up</Button>
                 </>
               )}
             </div>
           </Toolbar>
         </AppBar>
       </div>
-      {/* {user ? <Home /> : <Error />} */}
-      <Home user={user} id={id} />
+      {user ? <Home user={user} id={id} /> : <Error />}
+      {/* <Home user={user} id={id} /> */}
     </>
   );
 }
