@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Expense Tracker
+
+This project was developed as part of learning React framework.
+This expense tracker dashboard manager has the capability to switch between dark and light mode depending on the user preference 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
