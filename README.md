@@ -8,11 +8,11 @@ This expense tracker dashboard manager has the capability to switch between dark
 
 To start running this project, navigate to expense tracker dashboard directing using 
 
-### 'cd expense-tracker
+### 'cd expense-tracker'
 
 In the project directory, run:
 
-### `npm install`
+### 'npm install'
 
 This will install all the required libraries
 
