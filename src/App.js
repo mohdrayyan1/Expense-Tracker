@@ -91,7 +91,7 @@ const App = () => {
                 <>
                   <Avatar alt={user.displayName} src={user.photoURL} />
                   <p className="displayName">{user.displayName}</p>
-                  {/* <Toggle /> */}
+                  <Toggle />
                   <Button variant="contained" color="secondary" onClick={signOut}>Sign Out</Button>
                 </>
               ) : (
